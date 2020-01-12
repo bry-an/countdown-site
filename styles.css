@@ -8,8 +8,12 @@ body {
     height: 100vh;
     overflow: hidden;
     font-family: sans-serif;
+    background: #333;
 }
 
-.no {
-    transform: translate(50%, 100%)
+#main {
+    text-align: center;
+    margin-top: 50px;
+    transform: translate(0, 50%);
+    color: #eee;
 }

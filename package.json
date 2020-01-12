@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/bry-an/countdown-site/issues"
   },
-  "homepage": "https://github.com/bry-an/countdown-site#readme"
+  "homepage": "https://github.com/bry-an/countdown-site#readme",
+  "dependencies": {
+    "date-fns": "^2.9.0"
+  }
 }
