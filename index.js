@@ -1,5 +1,9 @@
 
 
+const format = (time, unit) => {
+    const roundedTime = parseInt(time);
+    return roundedTime !== 1 ? `${roundedTime} ${unit}s` : `${roundedTime} ${unit}`
+}
 const getTimeUntilGracesBday = () => {
     const today = new Date();
     const gracesBday = new Date('2/21/2020');
@@ -9,7 +13,10 @@ const getTimeUntilGracesBday = () => {
     const minutes = 60 * (hours % 1);
     const seconds = 60 * (minutes % 1);
 
-    const humanReadableDiff = `${parseInt(days)} days, ${parseInt(hours)} hours, ${parseInt(minutes)} minutes, and ${parseInt(seconds)} seconds`
+    const humanReadableDiff = `${format(days, 'day')}
+                                 ${format(hours, 'hour')} 
+                                 ${format(minutes, 'minute')} 
+                                 ${format(seconds, 'second')}`
 
     document.getElementById('time').innerHTML = humanReadableDiff
 }
