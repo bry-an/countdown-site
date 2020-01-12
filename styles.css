@@ -17,3 +17,7 @@ body {
     transform: translate(0, 50%);
     color: #eee;
 }
+
+#no {
+    margin-bottom: 20px;
+}

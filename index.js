@@ -1,13 +1,18 @@
 
 
-const timeUntilGracesBirthday = () => {
+const getTimeUntilGracesBday = () => {
     const today = new Date();
     const gracesBday = new Date('2/21/2020');
-    const milliseconds = gracesBday - today;
-    const millsInADay = 86400000;
-    const days = (milliseconds/millsInADay).toFixed(2)
+    const difference = gracesBday - today;
+    const days = difference / (24 * 3600 * 1000);
+    const hours = 24 * (days % 1);
+    const minutes = 60 * (hours % 1);
+    const seconds = 60 * (minutes % 1);
 
-    return days;
+    const humanReadableDiff = `${parseInt(days)} days, ${parseInt(hours)} hours, ${parseInt(minutes)} minutes, and ${parseInt(seconds)} seconds`
+
+    document.getElementById('time').innerHTML = humanReadableDiff
 }
+getTimeUntilGracesBday()
 
-document.getElementById('days').innerHTML = timeUntilGracesBirthday()
+setInterval(getTimeUntilGracesBday, 1000)
