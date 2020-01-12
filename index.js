@@ -6,7 +6,8 @@ const format = (time, unit) => {
 }
 const getTimeUntilGracesBday = () => {
     const today = new Date();
-    const gracesBday = new Date('2/21/2020');
+    const thisYear = today.getFullYear()
+    const gracesBday = new Date(`2/21/${thisYear}`);
     const difference = gracesBday - today;
     const days = difference / (24 * 3600 * 1000);
     const hours = 24 * (days % 1);
