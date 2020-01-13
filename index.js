@@ -1,5 +1,5 @@
 
-const gracesBday = new Date(`1/12/${new Date().getFullYear()}`);
+const gracesBday = new Date(`2/21/${new Date().getFullYear()}`);
 
 const format = (time, unit) => {
     const roundedTime = parseInt(time);
@@ -16,7 +16,9 @@ const isGracesBirthday = () => {
 
 const itsHerBirthday = () => {
     document.getElementById('yes-or-no').innerHTML = 'Yes!';
-    document.getElementById('time-until').innerHTML = '🎉 Wish Her A Happy Birthday 🎉';
+    document.getElementById('time-until').innerHTML = '🎉 Wish Her a Happy Birthday 🎉';
+    document.getElementById('fireworks').style.display = 'inherit'
+
 }
 const getTimeUntilGracesBday = () => {
     const today = new Date();

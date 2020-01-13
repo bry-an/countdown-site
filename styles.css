@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+h1 {
+    font-size: 3rem;
+}
+
 body {
     width: 100vw;
     height: 100vh;
@@ -24,4 +28,12 @@ body {
 
 #yes-or-no {
     margin-bottom: 20px;
+}
+
+#time-until {
+    font-size: 1.5rem;
+}
+
+#fireworks {
+    display: none;
 }
