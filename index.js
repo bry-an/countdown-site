@@ -1,15 +1,15 @@
 const yearOfNextBDay = () => {
     const thisYear = new Date().getFullYear();
     const today = new Date();
-    const gracesBdayThisYear = new Date(`2/21/${thisYear}`);
-    if (today > gracesBdayThisYear) {
+    const endOfGracesBirthday = new Date(`2/22/${thisYear}`);
+    if (today > endOfGracesBirthday) {
         return new Date().getFullYear() + 1;
     }
     return new Date().getFullYear();
-}
-const gracesBday = new Date(`2/21/${yearOfNextBDay()}`);
-
-const format = (time, unit) => {
+    }
+    const gracesBday = new Date(`2/21/${yearOfNextBDay()}`);
+    
+    const format = (time, unit) => {
     const roundedTime = parseInt(time);
     return roundedTime !== 1 ? `${roundedTime} ${unit}s` : `${roundedTime} ${unit}`;
 }
