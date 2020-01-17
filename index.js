@@ -1,9 +1,17 @@
-const thisYear = new Date().getFullYear();
-const gracesBday = new Date(`2/21/${thisYear}`);
+const yearOfNextBDay = () => {
+    const thisYear = new Date().getFullYear();
+    const today = new Date();
+    const gracesBdayThisYear = new Date(`2/21/${thisYear}`);
+    if (today > gracesBdayThisYear) {
+        return new Date().getFullYear() + 1;
+    }
+    return new Date().getFullYear();
+}
+const gracesBday = new Date(`2/21/${yearOfNextBDay()}`);
 
 const format = (time, unit) => {
     const roundedTime = parseInt(time);
-    return roundedTime !== 1 ? `${roundedTime} ${unit}s` : `${roundedTime} ${unit}`
+    return roundedTime !== 1 ? `${roundedTime} ${unit}s` : `${roundedTime} ${unit}`;
 }
 const isGracesBirthday = () => {
     const today = new Date();
@@ -17,7 +25,7 @@ const isGracesBirthday = () => {
 const itsHerBirthday = () => {
     document.getElementById('yes-or-no').innerHTML = 'Yes!';
     document.getElementById('time-until').innerHTML = '🎉 Wish Her a Happy Birthday 🎉';
-    document.getElementById('fireworks').style.display = 'inherit'
+    document.getElementById('fireworks').style.display = 'inherit';
 }
 
 const getTimeUntilGracesBday = () => {
@@ -33,10 +41,10 @@ const getTimeUntilGracesBday = () => {
     const minutes = 60 * (hours % 1);
     const seconds = 60 * (minutes % 1);
 
-    const humanReadableDiff = `${format(days, 'day')} ${format(hours, 'hour')} ${format(minutes, 'minute')} ${format(seconds, 'second')}`
+    const humanReadableDiff = `${format(days, 'day')}, ${format(hours, 'hour')}, ${format(minutes, 'minute')}, ${format(seconds, 'second')}`
 
     if (!birthdayGirl) {
-        document.getElementById('time').innerHTML = humanReadableDiff
+        document.getElementById('time').innerHTML = humanReadableDiff;
     }
 }
 
@@ -47,7 +55,7 @@ setInterval(() => {
     if (isGracesBirthday()) {
         itsHerBirthday();
     } else {
-        getTimeUntilGracesBday()
+        getTimeUntilGracesBday();
     }
-}, 1000)
+}, 1000);
 

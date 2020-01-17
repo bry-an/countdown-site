@@ -17,7 +17,5 @@
   },
   "homepage": "https://github.com/bry-an/countdown-site#readme",
   "dependencies": {
-    "date-fns": "^2.9.0",
-    "fscreen": "^1.0.2"
   }
 }
